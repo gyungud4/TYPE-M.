@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,40 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f4b8c0d12.js" crossorigin="anonymous"></script>
     <style>
-        .hidden { display: none !important; }
-        /* 질문 중앙 배치 */
-        #q-text {
-            font-size: 2rem; line-height: 1.4; margin-bottom: 60px; min-height: 150px;
-            display: flex; align-items: center; justify-content: center;
-            word-break: keep-all; color: #1e293b; font-weight: 700; text-align: center;
+        .hidden {
+            display: none !important;
         }
-        /* 로그인/회원가입 전용 창 (분석완료 팝업과는 다름) */
+
+        #q-text {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 60px;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: keep-all;
+            color: #1e293b;
+            font-weight: 700;
+            text-align: center;
+        }
+
+
         .auth-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7); z-index: 9999;
-            display: none; align-items: center; justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
+
 <body>
     <div class="bg-grid"></div>
     <div class="blur blur1"></div>
@@ -50,7 +70,8 @@
                 <h3>일반 전공 검사</h3>
                 <div class="card-text">실무 역량과 취업을 목표로 하는 전공 과정<br>협업과 프로젝트 중심의 실전 개발 경험 제공</div>
                 <div class="tag-wrap">
-                    <span class="tag">프론트엔드</span><span class="tag">백엔드</span><span class="tag">UI/UX</span><span class="tag">AI</span><span class="tag">iOS</span>
+                    <span class="tag">프론트엔드</span><span class="tag">백엔드</span><span class="tag">UI/UX</span><span
+                        class="tag">AI</span><span class="tag">iOS</span>
                     <span class="tag more-tag">...<span class="tooltip">DevOps, 플러터, 게임개발, IoT</span></span>
                 </div>
             </div>
@@ -58,7 +79,8 @@
                 <h3>기능반 검사</h3>
                 <div class="card-text">기능대회 출전과 메달 획득을 목표로 하는<br>실전 문제 해결과 대회 준비에 특화된 심화 과정</div>
                 <div class="tag-wrap">
-                    <span class="tag">사이버보안</span><span class="tag">IT네트워크</span><span class="tag">모바일로보틱스</span><span class="tag">클라우드</span><span class="tag">모바일앱</span>
+                    <span class="tag">사이버보안</span><span class="tag">IT네트워크</span><span class="tag">모바일로보틱스</span><span
+                        class="tag">클라우드</span><span class="tag">모바일앱</span>
                 </div>
             </div>
         </div>
@@ -75,11 +97,15 @@
     <section id="quiz-section" class="hero hidden">
         <div id="step-badge" class="top-badge">STEP 1: 성향 분석</div>
         <div id="quiz-info" style="margin-top:20px; font-weight:600; color:#00458a; text-align:center;"></div>
-        <div class="progress-container" style="width:100%; max-width:600px; height:8px; margin: 15px auto 60px auto; overflow:hidden; background:rgba(0,0,0,0.05); border-radius:10px;">
-            <div id="progress-bar" style="width: 0%; height:100%; background:linear-gradient(90deg, #00458a, #0070e0); transition:0.4s ease-out;"></div>
+        <div class="progress-container"
+            style="width:100%; max-width:600px; height:8px; margin: 15px auto 60px auto; overflow:hidden; background:rgba(0,0,0,0.05); border-radius:10px;">
+            <div id="progress-bar"
+                style="width: 0%; height:100%; background:linear-gradient(90deg, #00458a, #0070e0); transition:0.4s ease-out;">
+            </div>
         </div>
         <h2 id="q-text"></h2>
-        <div class="options-grid" style="display:flex; flex-direction:column; gap:15px; max-width:450px; margin:0 auto;">
+        <div class="options-grid"
+            style="display:flex; flex-direction:column; gap:15px; max-width:450px; margin:0 auto;">
             <button class="opt-btn glass" onclick="onAnswer(5)">매우 그렇다</button>
             <button class="opt-btn glass" onclick="onAnswer(4)">그렇다</button>
             <button class="opt-btn glass" onclick="onAnswer(3)">보통</button>
@@ -94,44 +120,61 @@
         <div class="main-card glass" style="text-align:left; max-width:600px; margin: 0 auto;">
             <p id="res-desc" style="margin-bottom:20px; font-size:17px; line-height:1.6;"></p>
             <p id="res-tech" style="font-weight:bold; color:#00458a;"></p>
-            <p id="res-advice" style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;"></p>
+            <p id="res-advice"
+                style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;">
+            </p>
         </div>
-        <button class="start-btn blue-btn" style="width:auto; padding: 15px 50px; margin-top:30px;" onclick="location.reload()">다시 하기</button>
+        <button class="start-btn blue-btn" style="width:auto; padding: 15px 50px; margin-top:30px;"
+            onclick="location.reload()">다시 하기</button>
     </section>
 
     <div id="login-modal" class="auth-overlay">
-        <div class="glass" style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
+        <div class="glass"
+            style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
             <h2 style="color:#00458a; margin-bottom:25px;">로그인</h2>
             <div style="display:flex; flex-direction:column; gap:15px;">
-                <input type="text" id="login-id" placeholder="아이디" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="login-pw" placeholder="비밀번호" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <input type="text" id="login-id" placeholder="아이디"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <input type="password" id="login-pw" placeholder="비밀번호"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
                 <button class="start-btn blue-btn" onclick="handleLogin()" style="width:100%;">로그인</button>
             </div>
-            <p style="margin-top:20px; font-size:14px; color:#64748b;">계정이 없으신가요? <span onclick="openSignup()" style="color:#00458a; cursor:pointer; font-weight:bold; text-decoration:underline;">회원가입</span></p>
-            <button onclick="closeModal('login-modal')" style="margin-top:15px; background:none; border:none; color:#94a3b8; cursor:pointer;">닫기</button>
+            <p style="margin-top:20px; font-size:14px; color:#64748b;">계정이 없으신가요? <span onclick="openSignup()"
+                    style="color:#00458a; cursor:pointer; font-weight:bold; text-decoration:underline;">회원가입</span></p>
+            <button onclick="closeModal('login-modal')"
+                style="margin-top:15px; background:none; border:none; color:#94a3b8; cursor:pointer;">닫기</button>
         </div>
     </div>
 
     <div id="signup-modal" class="auth-overlay">
-        <div class="glass" style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
+        <div class="glass"
+            style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
             <h2 style="color:#00458a; margin-bottom:25px;">회원가입</h2>
             <div style="display:flex; flex-direction:column; gap:12px;">
-                <select id="signup-dept" style="padding:15px; border-radius:12px; border:1px solid #ddd; background:white;">
+                <select id="signup-dept"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd; background:white;">
                     <option value="">학과 선택</option>
                     <option value="AI">AI과</option>
-                    <option value="IOT">IOT과</option>
+                    <option value="IOT">스마트 IOT과</option>
                     <option value="SW">SW개발과</option>
                 </select>
-                <input type="text" id="signup-name" placeholder="이름" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="text" id="signup-id" placeholder="아이디" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="signup-pw" placeholder="비밀번호 (숫자+특수문자)" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="signup-pw-confirm" placeholder="비밀번호 확인" style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <button class="start-btn blue-btn" onclick="handleSignup()" style="width:100%; margin-top:10px;">회원가입</button>
+                <input type="text" id="signup-name" placeholder="이름"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <input type="text" id="signup-id" placeholder="아이디"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <input type="password" id="signup-pw" placeholder="비밀번호 (숫자+특수문자)"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <input type="password" id="signup-pw-confirm" placeholder="비밀번호 확인"
+                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
+                <button class="start-btn blue-btn" onclick="handleSignup()"
+                    style="width:100%; margin-top:10px;">회원가입</button>
             </div>
-            <button onclick="closeModal('signup-modal')" style="margin-top:20px; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
+            <button onclick="closeModal('signup-modal')"
+                style="margin-top:20px; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

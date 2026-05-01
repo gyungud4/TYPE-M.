@@ -1,4 +1,4 @@
-// 1. 데이터 정의 (질문 및 결과 데이터)
+
 const commonQ = [
     { q: "새로운 앱이나 서비스를 기획하고 직접 만들어보는 과정이 즐거운가요?", t: "gen" },
     { q: "어려운 수학 문제를 풀 때처럼, 정답을 찾을 때까지 끝까지 파고드는 편인가요?", t: "skl" },
@@ -77,14 +77,13 @@ const resultData = {
     cloud: { n: "클라우드 컴퓨팅", d: "가상 자원을 관리하는 인프라 전문가입니다.", k: "AWS, 가상화 기술", a: "클라우드 시대의 핵심 인재가 될 거예요." }
 };
 
-// 2. 변수 관리
-let phase = 1; 
-let qIdx = 0; 
-let typeScore = { gen: 0, skl: 0 }; 
-let majorScore = {}; 
+
+let phase = 1;
+let qIdx = 0;
+let typeScore = { gen: 0, skl: 0 };
+let majorScore = {};
 let finalType = "";
 
-// 3. 검사 시작 (버튼 활성화)
 function startQuiz() {
     document.getElementById('home-section').classList.add('hidden');
     document.getElementById('quiz-section').classList.remove('hidden');
@@ -117,7 +116,7 @@ function onAnswer(val) {
     }
 }
 
-// [수정] 팝업창을 띄우지 않고 즉시 다음 페이즈로 전환
+
 function finishPhase1() {
     finalType = typeScore.gen >= typeScore.skl ? 'gen' : 'skl';
     phase = 2;
@@ -137,7 +136,6 @@ function finishPhase2() {
     document.getElementById('res-advice').innerText = `"${res.a}"`;
 }
 
-// 4. 로그인 / 회원가입 / 로그아웃 관련 로직
 function openLogin() { document.getElementById('login-modal').style.display = 'flex'; }
 function openSignup() { closeModal('login-modal'); document.getElementById('signup-modal').style.display = 'flex'; }
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
@@ -149,13 +147,13 @@ function handleSignup() {
     const pw = document.getElementById('signup-pw').value;
     const pwConfirm = document.getElementById('signup-pw-confirm').value;
 
-    if(!dept || !name || !id || !pw) return alert("모든 항목을 입력해주세요.");
+    if (!dept || !name || !id || !pw) return alert("모든 항목을 입력해주세요.");
     if (localStorage.getItem(id)) return alert("이미 존재하는 아이디입니다.");
-    
+
     const hasNumber = /[0-9]/.test(pw);
     const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(pw);
     if (!hasNumber || !hasSpecial) return alert("비밀번호에는 숫자와 특수문자가 무조건 포함되어야 합니다.");
-    if(pw !== pwConfirm) return alert("비밀번호가 일치하지 않습니다.");
+    if (pw !== pwConfirm) return alert("비밀번호가 일치하지 않습니다.");
 
     localStorage.setItem(id, JSON.stringify({ dept, name, id, pw }));
     alert("회원가입 완료!");
@@ -172,7 +170,7 @@ function handleLogin() {
         const user = JSON.parse(userData);
         if (user.pw === pw) {
             alert(user.name + "님 환영합니다!");
-            // [수정] 네비게이션 바를 로그아웃 버튼으로 변경
+
             document.querySelector('.nav-menu').innerHTML = `
                 <a href="#">이용 안내</a>
                 <a href="#">저장된 결과</a>
@@ -189,7 +187,7 @@ function handleLogin() {
 }
 
 function handleLogout() {
-    if(confirm("로그아웃 하시겠습니까?")) {
+    if (confirm("로그아웃 하시겠습니까?")) {
         location.reload(); // 새로고침하여 초기 상태로 복구
     }
 }
