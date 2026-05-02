@@ -1,180 +1,208 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TYPE:M | 나만의 전공 매칭</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f4b8c0d12.js" crossorigin="anonymous"></script>
-    <style>
-        .hidden {
-            display: none !important;
-        }
 
-        #q-text {
-            font-size: 2rem;
-            line-height: 1.4;
-            margin-bottom: 60px;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: keep-all;
-            color: #1e293b;
-            font-weight: 700;
-            text-align: center;
-        }
-
-
-        .auth-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 9999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
 </head>
 
 <body>
+
     <div class="bg-grid"></div>
     <div class="blur blur1"></div>
     <div class="blur blur2"></div>
 
-    <nav>
-        <h1 class="logo" onclick="location.reload()" style="cursor:pointer">✦ TYPE:M</h1>
-        <div class="nav-menu">
-            <a href="#">이용 안내</a>
-            <a href="#">저장된 결과</a>
-            <div id="auth-area">
-                <button class="login-btn" onclick="openLogin()">로그인 →</button>
+
+
+    <div class="main-wrapper">
+
+        <nav>
+
+            <h1 class="logo" onclick="location.reload()" style="cursor:pointer">✦ TYPE:M</h1>
+
+            <div class="nav-menu">
+                <a href="javascript:void(0)" onclick="openInfo()">이용 안내</a>
+                <a href="javascript:void(0)" onclick="showSavedResults()">저장된 결과</a>
+                <div id="auth-area">
+                    <button class="login-btn" onclick="openLogin()">로그인 →</button>
+                </div>
+
             </div>
-        </div>
-    </nav>
 
-    <section class="hero" id="home-section">
-        <div class="top-badge">✨ AI 기반 전공 매칭 시스템</div>
-        <h1>TYPE:M</h1>
-        <h2>나에게 잘 맞는 전공을 찾아보세요</h2>
-        <p>간단한 질문으로 당신에게 딱 맞는 전공을 추천해드립니다</p>
+        </nav>
 
-        <div class="card-wrap">
-            <div class="main-card glass">
-                <h3>일반 전공 검사</h3>
-                <div class="card-text">실무 역량과 취업을 목표로 하는 전공 과정<br>협업과 프로젝트 중심의 실전 개발 경험 제공</div>
-                <div class="tag-wrap">
-                    <span class="tag">프론트엔드</span><span class="tag">백엔드</span><span class="tag">UI/UX</span><span
-                        class="tag">AI</span><span class="tag">iOS</span>
-                    <span class="tag more-tag">...<span class="tooltip">DevOps, 플러터, 게임개발, IoT</span></span>
+
+
+        <section class="hero" id="home-section">
+
+            <div class="top-badge">✨ 나만의 전공 매칭 시스템</div>
+
+            <h1>TYPE:M</h1>
+
+            <h2>나에게 잘 맞는 전공을 찾아보세요</h2>
+
+            <p>간단한 질문으로 당신에게 딱 맞는 전공을 추천해드립니다</p>
+
+
+
+            <div class="card-wrap">
+
+                <div class="main-card glass">
+
+                    <h3>일반 전공 검사</h3>
+                    <div class="card-text">실무 역량과 취업을 목표로 하는 전공 과정<br>협업과 프로젝트 중심의 실전 개발 경험 제공</div>
+                    <div class="tag-wrap">
+                        <span class="tag">프론트엔드</span><span class="tag">백엔드</span><span class="tag">UI/UX</span><span
+                            class="tag">AI</span><span class="tag">iOS</span>
+                        <div class="tooltip-container">
+                            <button class="more-btn">...</button>
+                            <span class="tooltip-content">IOT, 앱개발, DevOps</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="main-card glass">
+
+                    <h3>기능반 검사</h3>
+                    <div class="card-text">기능대회 출전과 메달 획득을 목표로 하는<br>실전 문제 해결과 대회 준비에 특화된 심화 과정</div>
+                    <div class="tag-wrap">
+                        <span class="tag">사이버보안</span><span class="tag">IT네트워크시스템</span>
+                        <span class="tag">모바일로보틱스</span><span class="tag">클라우드컴퓨팅</span><span class="tag">모바일앱개발</span>
+                    </div>
                 </div>
             </div>
-            <div class="main-card glass">
-                <h3>기능반 검사</h3>
-                <div class="card-text">기능대회 출전과 메달 획득을 목표로 하는<br>실전 문제 해결과 대회 준비에 특화된 심화 과정</div>
-                <div class="tag-wrap">
-                    <span class="tag">사이버보안</span><span class="tag">IT네트워크</span><span class="tag">모바일로보틱스</span><span
-                        class="tag">클라우드</span><span class="tag">모바일앱</span>
-                </div>
+
+
+
+            <div class="start-box glass">
+                <h3 style="font-size:24px; margin-bottom:20px; font-weight:700;">검사 시작하기</h3>
+                <button class="start-btn blue-btn" onclick="startQuiz()">검사 시작하기 →</button>
             </div>
-        </div>
+        </section>
 
 
-        <div class="start-box glass">
-            <div class="start-content">
-                <h3 class="start-title">검사 시작하기</h3>
-                <button class="start-btn blue-btn big-start-btn" onclick="startQuiz()">검사 시작하기 →</button>
+
+        <section id="quiz-section" class="hero hidden">
+            <div id="step-badge" class="top-badge">STEP 1: 성향 분석</div>
+            <div id="quiz-info" style="margin-top:10px; font-weight:600; color:#00458a;"></div>
+            <div class="progress-container">
+                <div id="progress-bar"></div>
             </div>
-        </div>
-    </section>
 
-    <section id="quiz-section" class="hero hidden">
-        <div id="step-badge" class="top-badge">STEP 1: 성향 분석</div>
-        <div id="quiz-info" style="margin-top:20px; font-weight:600; color:#00458a; text-align:center;"></div>
-        <div class="progress-container"
-            style="width:100%; max-width:600px; height:8px; margin: 15px auto 60px auto; overflow:hidden; background:rgba(0,0,0,0.05); border-radius:10px;">
-            <div id="progress-bar"
-                style="width: 0%; height:100%; background:linear-gradient(90deg, #00458a, #0070e0); transition:0.4s ease-out;">
+            <h2 id="q-text"></h2>
+            <div class="options-grid">
+                <button class="opt-btn" onclick="onAnswer(5)">매우 그렇다</button>
+                <button class="opt-btn" onclick="onAnswer(4)">그렇다</button>
+                <button class="opt-btn" onclick="onAnswer(3)">보통</button>
+                <button class="opt-btn" onclick="onAnswer(2)">아니다</button>
+                <button class="opt-btn" onclick="onAnswer(1)">매우 아니다</button>
             </div>
-        </div>
-        <h2 id="q-text"></h2>
-        <div class="options-grid"
-            style="display:flex; flex-direction:column; gap:15px; max-width:450px; margin:0 auto;">
-            <button class="opt-btn glass" onclick="onAnswer(5)">매우 그렇다</button>
-            <button class="opt-btn glass" onclick="onAnswer(4)">그렇다</button>
-            <button class="opt-btn glass" onclick="onAnswer(3)">보통</button>
-            <button class="opt-btn glass" onclick="onAnswer(2)">아니다</button>
-            <button class="opt-btn glass" onclick="onAnswer(1)">매우 아니다</button>
-        </div>
-    </section>
+        </section>
 
-    <section id="result-section" class="hero hidden">
-        <div class="top-badge">최종 추천 결과</div>
-        <h1 id="res-major-name" style="font-size:55px; color:#00458a; margin-bottom:20px;"></h1>
-        <div class="main-card glass" style="text-align:left; max-width:600px; margin: 0 auto;">
-            <p id="res-desc" style="margin-bottom:20px; font-size:17px; line-height:1.6;"></p>
-            <p id="res-tech" style="font-weight:bold; color:#00458a;"></p>
-            <p id="res-advice"
-                style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;">
-            </p>
+        <section id="mid-result-section" class="hero hidden">
+            <div class="top-badge">성향 분석 완료</div>
+            <h2 style="font-size: 32px; margin-bottom: 10px;">당신은 <span id="user-type-text"
+                    style="color:#00458a;"></span> 입니다!</h2>
+            <p id="type-desc" style="margin-bottom: 30px;"></p>
+
+            <div class="start-box glass" style="max-width: 500px; margin: 0 auto;">
+                <h3 style="font-size:20px; margin-bottom:15px;">나에게 딱 맞는 전공은 무엇일까요?</h3>
+                <button class="start-btn blue-btn" onclick="startPhase2()">세부 분석 하러 가기 →</button>
+            </div>
+        </section>
+
+        <section id="result-section" class="hero hidden">
+            <div class="top-badge">최종 추천 결과</div>
+            <h1 id="res-major-name" style="font-size:55px; color:#00458a; margin-bottom:20px;"></h1>
+            <div class="glass" style="text-align:left; max-width:600px; margin: 0 auto; padding:35px;">
+                <p id="res-desc" style="margin-bottom:20px; font-size:17px; line-height:1.6;"></p>
+                <p id="res-tech" style="font-weight:bold; color:#00458a;"></p>
+                <p id="res-advice"
+                    style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;">
+                </p>
+            </div>
+            <div style="display:flex; gap:15px; justify-content:center; margin-top:30px;">
+                <button class="res-btn blue-btn" onclick="saveMyResult()">결과 저장하기</button>
+                <button class="res-btn gray-btn" onclick="location.reload()">다시 하기</button>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div id="info-modal" class="auth-overlay">
+
+        <div class="modal-content">
+            <h2 style="color:#00458a; margin-bottom:20px;">이용 안내</h2>
+            <div style="text-align:left; line-height:1.8; font-size:15px;">
+                <p><strong>[크레딧]</strong> 기획 및 제작: 선가영, 양지우</p>
+                <p><strong>[검사 방법]</strong> 본인이 평소 선호하는 활동에 가장 가까운 버튼을 눌러주세요.</p>
+                <p><strong>[전공 설명]</strong> 각 전공은 개발 실무 중심의 '일반 전공'과 전문 기술 대회 중심의 '기능반'으로 나뉩니다.</p>
+            </div>
+            <button onclick="closeModal('info-modal')" class="login-btn" style="margin-top:20px;">닫기</button>
         </div>
-        <button class="start-btn blue-btn" style="width:auto; padding: 15px 50px; margin-top:30px;"
-            onclick="location.reload()">다시 하기</button>
-    </section>
+    </div>
+
+
+
+    <div id="result-list-modal" class="auth-overlay">
+
+        <div class="modal-content">
+            <h2 style="color:#00458a; margin-bottom:20px;">저장된 결과 목록</h2>
+            <div id="result-list-container" class="result-scroll"></div>
+            <button onclick="closeModal('result-list-modal')" class="login-btn">닫기</button>
+        </div>
+
+    </div>
+
+
 
     <div id="login-modal" class="auth-overlay">
-        <div class="glass"
-            style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
-            <h2 style="color:#00458a; margin-bottom:25px;">로그인</h2>
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <input type="text" id="login-id" placeholder="아이디"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="login-pw" placeholder="비밀번호"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <button class="start-btn blue-btn" onclick="handleLogin()" style="width:100%;">로그인</button>
-            </div>
+
+        <div class="modal-content">
+            <h2 style="margin-bottom:25px;">로그인</h2>
+            <input type="text" id="login-id" placeholder="아이디" class="modal-input">
+            <input type="password" id="login-pw" placeholder="비밀번호" class="modal-input">
+            <button class="start-btn blue-btn" onclick="handleLogin()" style="width:100%;">로그인</button>
             <p style="margin-top:20px; font-size:14px; color:#64748b;">계정이 없으신가요? <span onclick="openSignup()"
                     style="color:#00458a; cursor:pointer; font-weight:bold; text-decoration:underline;">회원가입</span></p>
             <button onclick="closeModal('login-modal')"
                 style="margin-top:15px; background:none; border:none; color:#94a3b8; cursor:pointer;">닫기</button>
         </div>
+
     </div>
 
+
+
     <div id="signup-modal" class="auth-overlay">
-        <div class="glass"
-            style="background:white; padding:40px; text-align:center; width:100%; max-width:400px; border-radius:24px; color:#333;">
-            <h2 style="color:#00458a; margin-bottom:25px;">회원가입</h2>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-                <select id="signup-dept"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd; background:white;">
-                    <option value="">학과 선택</option>
-                    <option value="AI">AI과</option>
-                    <option value="IOT">스마트 IOT과</option>
-                    <option value="SW">SW개발과</option>
-                </select>
-                <input type="text" id="signup-name" placeholder="이름"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="text" id="signup-id" placeholder="아이디"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="signup-pw" placeholder="비밀번호 (숫자+특수문자)"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <input type="password" id="signup-pw-confirm" placeholder="비밀번호 확인"
-                    style="padding:15px; border-radius:12px; border:1px solid #ddd;">
-                <button class="start-btn blue-btn" onclick="handleSignup()"
-                    style="width:100%; margin-top:10px;">회원가입</button>
-            </div>
+        <div class="modal-content">
+            <h2 style="margin-bottom:25px;">회원가입</h2>
+            <select id="signup-dept" class="modal-input">
+                <option value="">학과 선택</option>
+                <option value="SW">SW개발과</option>
+                <option value="IOT">스마트IOT과</option>
+                <option value="SW">AI과</option>
+            </select>
+            <input type="text" id="signup-name" placeholder="이름" class="modal-input">
+            <input type="text" id="signup-id" placeholder="아이디" class="modal-input">
+            <input type="password" id="signup-pw" placeholder="비밀번호" class="modal-input">
+            <button class="start-btn blue-btn" onclick="handleSignup()"
+                style="width:100%; margin-top:10px;">회원가입</button>
             <button onclick="closeModal('signup-modal')"
-                style="margin-top:20px; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
+                style="margin-top:15px; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
