@@ -131,7 +131,7 @@ p {
     font-size: 18px;
 }
 
-/* 카드 너비 확장 및 그리드 조정 */
+
 .card-wrap {
     margin-top: 50px;
     display: grid;
@@ -157,7 +157,7 @@ p {
     margin-bottom: 16px;
 }
 
-/* 태그 래퍼 수정: 기능반 배지 5개가 다 들어가도록 설정 */
+
 .tag-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +170,7 @@ p {
     flex-wrap: nowrap;
 }
 
-/* 기능반은 한 줄 유지 */
+
 
 .tag {
     padding: 7px 15px;
@@ -183,7 +183,6 @@ p {
     white-space: nowrap;
 }
 
-/* 팝업 스타일 추가 */
 .more-container {
     position: relative;
     display: inline-block;
@@ -239,12 +238,12 @@ p {
 }
 
 .start-box {
-    /* ...기존 스타일들 (glass 등)... */
-    
-    display: flex;          /* flex 박스로 설정 */
-    flex-direction: column; /* 위아래(세로) 방향으로 배치 */
-    align-items: center;    /* 가로축 기준으로 중앙 정렬 */
-    text-align: center;     /* 텍스트 내용도 중앙 정렬 */
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .start-btn {
@@ -256,8 +255,8 @@ p {
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    /* 버튼 자체의 마진을 없애거나 자동으로 잡히게 함 */
-    margin: 0 auto; 
+
+    margin: 0 auto;
 }
 
 .options-grid {
@@ -382,51 +381,48 @@ p {
 .hidden {
     display: none !important;
 }
-/* 1. 컨테이너: 옆 버튼들과 나란히 배치 */
+
 .tooltip-container {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
-/* 2. 버튼: 이미지 속 회색 동그라미 스타일로 고정 */
+
 .more-btn {
-  background-color: #e9ecef; /* 회색 배경 */
-  border: none;
-  color: #334e7e;           /* 글자색 */
-  width: 44px;              /* 가로크기 고정 */
-  height: 38px;             /* 세로크기 고정 (옆 버튼과 맞추기) */
-  border-radius: 20px;      /* 둥글게 */
-  cursor: pointer;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 4px;      /* ... 위치가 살짝 낮을 때 조절용 */
+    background-color: #e9ecef;
+    border: none;
+    color: #334e7e;
+    width: 44px;
+    height: 38px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
 }
 
-/* 3. 말풍선: 기본적으로 숨김 */
 .tooltip-content {
-  visibility: hidden;
-  position: absolute;
-  bottom: 125%;            /* 버튼 위로 띄우기 */
-  left: 50%;
-  transform: translateX(-50%);
-  
-  background-color: #333;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;     /* 한 줄로 나오게 */
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.2s;
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
-/* 4. 마우스 올리면 말풍선 등장! */
 .tooltip-container:hover .tooltip-content {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
-
