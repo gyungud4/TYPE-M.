@@ -6,7 +6,7 @@ const resultData = {
     },
     backend: {
         n: "백엔드 (Backend)", d: "데이터와 서버 엔진을 관리하는 시스템 전문가입니다.",
-        k: "Java, Spring Boot, MySQL", a: "보이지 않는 곳에서 견고한 성을 쌓아보세요."
+        k: "Java, Spring Boot, MySQL", a: "백엔드(Back-end)는 사용자가 직접 보지 못하는 서버 측 영역으로, \n클라이언트의 요청을 받아 처리하고 데이터를 저장·관리·응답하는 모든 것을 담당합니다."
     },
     devops: {
         n: "데브옵스 (DevOps)", d: "배포 자동화 및 클라우드 운영 전문가입니다.",
