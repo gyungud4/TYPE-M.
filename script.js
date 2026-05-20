@@ -14,7 +14,8 @@ const resultData = {
     },
     ios: {
         n: "iOS", d: "애플 생태계의 고품질 앱을 제작합니다.",
-        k: "Swift, SwiftUI, Xcode", a: "디테일이 살아있는 프리미엄 앱을 만들어보세요."
+        k: "Swift, SwiftUI, Xcode", a: "iOS 개발은 처음부터 쉬운 분야는 아닙니다.Swift, UIKit, SwiftUI 등 Apple만의 개발 방식과 생태계를 이해해야 하며작은 디테일까지 완성도로 이어지는 분야입니다. \n하지만 그만큼 iPhone, MacBook, Apple Watch까지하나의 흐름처럼 연결되는 Apple만의 고급스러운 경험을 직접 구현할 수 있습니다. \n흔한 길은 아니지만,완성도 하나만으로도 존재감을 증명할 수 있는 분야입니다."
+
     },
     design: {
         n: "UI/UX 디자인", d: "사용자 중심의 경험과 아름다움을 설계합니다."
@@ -38,12 +39,12 @@ const resultData = {
     },
     security: {
         n: "사이버 보안", d: "정보를 보호하고 침입을 방어하는 파수꾼입니다.",
-        k: "Network, Linux, Forensics", 
+        k: "Network, Linux, Forensics",
         a: "기초를 탄탄히 해야 나중에 후배들에게 따라잡히지 않습니다. \n CS, CPU, 메모리, 프로그래밍 언어 등 여러가지 방면의 지식을 가지세요. \n 기초장벽이 높은 전공이라 초반이 힘들테지만 고점이 높으니 버텨내세요."
     },
     mobile: {
         n: "모바일 앱 개발", d: "스마트폰 자원을 활용한 정교한 기능을 구현합니다.",
-        k: "Android, Kotlin", a: "숙련된 기술로 압도적인 퀄리티를 보여주세요."
+        k: "Android, Kotlin", a: "Flutter는 코드를 작성하면 만들어지는 UI를 바로 확인하며 개발할 수 있는 크로스 플랫폼 기술입니다. \n하나의 코드로 안드로이드와 iOS 앱을 모두 개발할 수 있는 만큼, 단순히 화면 구현만 하기보다 구조와 원리를 함께 이해하며 공부하는 것이 중요합니다. \n처음에는 어려울 수 있지만 직접 프로젝트를 개발하고 협업하는 경험이 쌓일수록 빠르게 성장할 수 있는 분야라고 생각합니다."
     },
     robotics: {
         n: "모바일 로보틱스", d: "지능형 로봇의 두뇌와 움직임을 설계합니다.",
@@ -171,7 +172,7 @@ function finishPhase2() {
 
     const genMajors = ['frontend', 'backend', 'devops', 'ios', 'design', 'game', 'flutter', 'ai', 'iot'];
     const skillMajors = ['security', 'mobile', 'robotics', 'network', 'cloud'];
-    
+
     const targetKeys = (finalType === 'gen') ? genMajors : skillMajors;
 
     const best = targetKeys.reduce((a, b) => {
@@ -212,12 +213,12 @@ function handleSignup() {
     const id = document.getElementById('signup-id').value;
     const pw = document.getElementById('signup-pw').value;
 
-    
+
     if (!dept || !name || !id || !pw) {
         return alert("모든 항목을 입력해주세요.");
     }
 
-  
+
     const existingUser = localStorage.getItem(id);
     if (existingUser) {
         return alert("이미 존재하는 아이디입니다. 다른 아이디를 사용해주세요.");
