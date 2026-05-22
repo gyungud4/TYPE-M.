@@ -1,8 +1,10 @@
 # ✦ TYPE:M
-> **GSM 신입생을 위한 맞춤형 전공 & 기능반 매칭 시스템** <br>
-> Backend: 선가영 Frontend: 양지우
+> **GSM 신입생을 위한 맞춤형 전공 & 기능반 매칭 시스템** 
 
 ---
+
+## 💻 0. 제작
+* Backend: 선가영 Frontend: 양지우
 
 ## 🎯 1. 기획 의도
 "실무 중심의 **일반 전공**인가, 대회 중심의 **기능반**인가?"
@@ -18,5 +20,6 @@
 ---
 
 ## 🛠 3. 기술 스택 (Tech Stack)
-* **Frontend:** HTML5, CSS3, Vanilla JavaScript 
+* **Frontend:** HTML5, CSS3
+* **Backend:**  Vanilla JavaScript 
 * **Database/Auth:** LocalStorage
