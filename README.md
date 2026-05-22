@@ -24,5 +24,5 @@
 
 ## 🛠 3. 기술 스택 (Tech Stack)
 * **Frontend:** HTML5, CSS3
-* **Backend:**  Vanilla JavaScript 
+* **Backend:** JavaScript 
 * **Database/Auth:** LocalStorage
