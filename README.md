@@ -1,6 +1,6 @@
 # ✦ TYPE:M
 > **GSM 신입생을 위한 맞춤형 전공 & 기능반 매칭 시스템**
-> Backend: 선가영 Frontend: 양지우 Backend: 선가영 Frontend: 양지우
+> \n Backend: 선가영 Frontend: 양지우
 
 ---
 
