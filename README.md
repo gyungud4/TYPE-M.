@@ -18,7 +18,5 @@
 ---
 
 ## 🛠 3. 기술 스택 (Tech Stack)
-* **Frontend:** HTML5, CSS3 (Glassmorphism UX), Vanilla JavaScript (ES6+)
-* **Database/Auth:** LocalStorage (브라우저 자체 데이터 저장)
-
-(image-1.png)
+* **Frontend:** HTML5, CSS3, Vanilla JavaScript 
+* **Database/Auth:** LocalStorage
