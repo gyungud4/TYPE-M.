@@ -194,3 +194,10 @@ nav {
 #info-modal p {
     margin-bottom: 15px !important; /* 문단 사이 간격 */
 }
+.credit-section { font-size: 16px; line-height: 1.6; }
+#btn-more {
+    background: none; border: none; color: #555555;
+    font-size: 12px; cursor: pointer; padding-left: 5px;
+}
+.hidden { display: none; }
+#more-names { font-size: 14px; color: #666666; margin-top: 5px; padding-left: 10px; }

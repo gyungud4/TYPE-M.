@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="bg-grid"></div>
     <div class="blur blur1"></div>
@@ -93,7 +95,8 @@
 
         <section id="mid-result-section" class="hero hidden" style="zoom: 1.25;">
             <div class="top-badge">성향 분석 완료</div>
-            <h2 style="font-size: 32px; margin-bottom: 10px;">당신은 <span id="user-type-text" style="color:#00458a;"></span> 입니다!</h2>
+            <h2 style="font-size: 32px; margin-bottom: 10px;">당신은 <span id="user-type-text"
+                    style="color:#00458a;"></span> 입니다!</h2>
             <p id="type-desc" style="margin-bottom: 30px;"></p>
             <div class="start-box glass" style="max-width: 700px; width: 80%; margin: 0 auto; padding: 40px 20px;">
                 <h3 style="font-size:20px; color:#00458a; margin-bottom:30px;">나에게 딱 맞는 전공은 무엇일까요?</h3>
@@ -107,13 +110,17 @@
             <div class="glass" style="text-align:left; max-width:600px; margin: 0 auto; padding:35px;">
                 <p id="res-desc" style="margin-bottom:20px; font-size:17px; line-height:1.6;"></p>
                 <p id="res-tech" style="font-weight:bold; color:#00458a;"></p>
-                <p id="res-advice" style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;"></p>
+                <p id="res-advice"
+                    style="margin-top:15px; color:#64748b; font-style:italic; border-top:1px solid #eee; padding-top:15px;">
+                </p>
             </div>
             <div style="display:flex; gap:15px; justify-content:center; margin-top:30px;">
-                <button class="start-btn blue-btn" onclick="saveMyResult()" style="padding: 12px 20px; width: 150px; font-size: 16px; border-radius: 8px; border: none; cursor: pointer;">
+                <button class="start-btn blue-btn" onclick="saveMyResult()"
+                    style="padding: 12px 20px; width: 150px; font-size: 16px; border-radius: 8px; border: none; cursor: pointer;">
                     결과 저장하기
                 </button>
-                <button class="start-btn" onclick="location.reload()" style="padding: 12px 20px; width: 150px; font-size: 16px; border-radius: 8px; background-color: #94a3b8; color: white; border: none; cursor: pointer;">
+                <button class="start-btn" onclick="location.reload()"
+                    style="padding: 12px 20px; width: 150px; font-size: 16px; border-radius: 8px; background-color: #94a3b8; color: white; border: none; cursor: pointer;">
                     다시 하기
                 </button>
             </div>
@@ -125,29 +132,48 @@
             <h2 style="color:#00458a; margin-bottom:20px;">이용 안내</h2>
             <div style="text-align:left; line-height:1.8; font-size:15px;">
                 <p><strong>[검사 방법]</strong> 본인이 평소 선호하는 활동에 가장 가까운 버튼을 눌러주세요.</p>
-                <p><strong>[전공 설명]</strong> 각 전공은 개발 실무 중심의 '일반 전공'과 전문 기술 대회 중심의 '기능반'으로 나뉩니다. 성향을 분석한 후 세부 분석을 통해 본인에게 가장 잘 맞는 전공을 찾아보세요!</p>
-                <p><strong>[크레딧]</strong> 기획 및 제작: 선가영, 양지우</p>
+                <p><strong>[전공 설명]</strong> 각 전공은 개발 실무 중심의 '일반 전공'과 전문 기술 대회 중심의 '기능반'으로 나뉩니다. 성향을 분석한 후 세부 분석을 통해 본인에게
+                    가장 잘 맞는 전공을 찾아보세요!</p>
+                <p><strong>[크레딧]</strong> 기획 및 제작: 선가영, 양지우
+                    <button id="btn-more" onclick="toggleCredits()"
+                        style="background: none; border: none; color: #555555; font-size: 11px; cursor: pointer; padding-left: 5px;">[
+                        더보기 ]</button>
+                </p>
+                <div id="more-names"
+                    style="display: none; font-size: 13px; color: #666666; margin-top: -5px; margin-bottom: 10px; padding-left: 10px;">
+                    FrontEnd 9기 김지유 선배님, Backend 9기 김수빈 선배님, DevOps 9기 박채은 선배님, IOS 9기 김준표 선배님, UI/UX 8기 모태환 선배님, 게임 개발 9기 박시온 선배님, Flutter/모바일앱개발 9기 류수연 선배님, AI 8기 배용빈 선배님, IOT 8기 김동현 선배님, 사이버 보안 8기 서정민 선배님, 모바일로보틱스 8기 이산 선배님, IT네트워크 시스템 8기 이영서 선배님, 클라우드 컴퓨팅 8기 한승재 선배님 모두 감사합니다! </div>
             </div>
             <button onclick="closeModal('info-modal')" class="login-btn" style="margin-top:20px;">닫기</button>
         </div>
     </div>
-    
-    <div id="result-list-modal" class="auth-overlay"><div class="modal-content"><h2 style="color:#00458a; margin-bottom:20px;">저장된 결과 목록</h2><div id="result-list-container" class="result-scroll"></div><button onclick="closeModal('result-list-modal')" class="login-btn">닫기</button></div></div>
+
+    <div id="result-list-modal" class="auth-overlay">
+        <div class="modal-content">
+            <h2 style="color:#00458a; margin-bottom:20px;">저장된 결과 목록</h2>
+            <div id="result-list-container" class="result-scroll"></div><button
+                onclick="closeModal('result-list-modal')" class="login-btn">닫기</button>
+        </div>
+    </div>
     <div id="login-modal" class="auth-overlay">
-        <div class="modal-content" style="text-align: center;"> <h2 style="margin-bottom:25px;">로그인</h2>
+        <div class="modal-content" style="text-align: center;">
+            <h2 style="margin-bottom:25px;">로그인</h2>
             <input type="text" id="login-id" placeholder="아이디" class="modal-input">
             <input type="password" id="login-pw" placeholder="비밀번호" class="modal-input">
-            
-            <button class="start-btn blue-btn" onclick="handleLogin()" style="width:100%; padding: 12px; margin-top: 10px;">로그인</button>
-            
-            <p style="margin-top:20px; font-size:14px; color:#64748b;">계정이 없으신가요? <span onclick="openSignup()" style="color:#00458a; cursor:pointer; font-weight:bold; text-decoration:underline;">회원가입</span></p>
-            
-            <button onclick="closeModal('login-modal')" style="display: block; margin: 15px auto 0; background:none; border:none; color:#94a3b8; cursor:pointer;">닫기</button>
+
+            <button class="start-btn blue-btn" onclick="handleLogin()"
+                style="width:100%; padding: 12px; margin-top: 10px;">로그인</button>
+
+            <p style="margin-top:20px; font-size:14px; color:#64748b;">계정이 없으신가요? <span onclick="openSignup()"
+                    style="color:#00458a; cursor:pointer; font-weight:bold; text-decoration:underline;">회원가입</span></p>
+
+            <button onclick="closeModal('login-modal')"
+                style="display: block; margin: 15px auto 0; background:none; border:none; color:#94a3b8; cursor:pointer;">닫기</button>
         </div>
     </div>
 
     <div id="signup-modal" class="auth-overlay">
-        <div class="modal-content" style="text-align: center;"> <h2 style="margin-bottom:25px;">회원가입</h2>
+        <div class="modal-content" style="text-align: center;">
+            <h2 style="margin-bottom:25px;">회원가입</h2>
             <select id="signup-dept" class="modal-input">
                 <option value="">학과 선택</option>
                 <option value="SW">SW개발과</option>
@@ -157,13 +183,16 @@
             <input type="text" id="signup-name" placeholder="이름" class="modal-input">
             <input type="text" id="signup-id" placeholder="아이디" class="modal-input">
             <input type="password" id="signup-pw" placeholder="비밀번호" class="modal-input">
-            
-            <button class="start-btn blue-btn" onclick="handleSignup()" style="width:100%; padding: 12px; margin-top:10px;">회원가입</button>
-            
-            <button onclick="closeModal('signup-modal')" style="display: block; margin: 15px auto 0; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
+
+            <button class="start-btn blue-btn" onclick="handleSignup()"
+                style="width:100%; padding: 12px; margin-top:10px;">회원가입</button>
+
+            <button onclick="closeModal('signup-modal')"
+                style="display: block; margin: 15px auto 0; background:none; border:none; color:#94a3b8; cursor:pointer;">취소</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

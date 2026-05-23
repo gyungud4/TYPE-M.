@@ -264,3 +264,17 @@ function deleteResult(id) {
     localStorage.setItem(`results_${currentUserId}`, JSON.stringify(savedResults));
     showSavedResults();
 }
+
+function toggleCredits() {
+    const moreNames = document.getElementById('more-names');
+    const btnMore = document.getElementById('btn-more');
+    
+    
+    if (moreNames.style.display === 'none') {
+        moreNames.style.display = 'block';
+        btnMore.innerText = '[ 닫기 ]';
+    } else {
+        moreNames.style.display = 'none';
+        btnMore.innerText = '[ 더보기 ]';
+    }
+}
