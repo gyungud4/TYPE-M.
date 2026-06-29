@@ -1,4 +1,3 @@
-
 const resultData = {
     frontend: {
         n: "프론트엔드 (Frontend)", d: "웹사이트의 화면과 사용자 상호작용을 담당합니다.",
